@@ -61,20 +61,32 @@ void rotate_screen(){
 
 	sprintf(command, "xinput set-prop \"%s\" \"Coordinate Transformation Matrix\" %s", "Wacom HID 511A Finger touch", COOR[current_state]);
 	system(command);
+	sprintf(command, "xinput --map-to-output \"%s\" eDP-1", "Wacom HID 511A Finger touch");
+	system(command);
 
 	sprintf(command, "xinput set-prop \"%s\" \"Coordinate Transformation Matrix\" %s", "Wacom HID 511A Pen stylus", COOR[current_state]);
+	system(command);
+	sprintf(command, "xinput --map-to-output \"%s\" eDP-1", "Wacom HID 511A Pen stylus");
 	system(command);
 
 	sprintf(command, "xinput set-prop \"%s\" \"Coordinate Transformation Matrix\" %s", "Wacom HID 511A Pen eraser", COOR[current_state]);
 	system(command);
+	sprintf(command, "xinput --map-to-output \"%s\" eDP-1", "Wacom HID 511A Pen eraser");
+	system(command);
 
 	sprintf(command, "xinput set-prop \"%s\" \"Coordinate Transformation Matrix\" %s", "Chicony ThinkPad X1 Tablet Thin Keyboard Gen 3 Touchpad", COOR[current_state]);
+	system(command);
+	sprintf(command, "xinput --map-to-output \"%s\" eDP-1", "Chicony ThinkPad X1 Tablet Thin Keyboard Gen 3 Touchpad");
 	system(command);
 
 	sprintf(command, "xinput set-prop \"%s\" \"Coordinate Transformation Matrix\" %s", "pointer:Chicony ThinkPad X1 Tablet Thin Keyboard Gen 3 Consumer Control", COOR[current_state]);
 	system(command);
+	sprintf(command, "xinput --map-to-output \"%s\" eDP-1", "pointer:Chicony ThinkPad X1 Tablet Thin Keyboard Gen 3 Consumer Control");
+	system(command);
 
 	sprintf(command, "xinput set-prop \"%s\" \"Coordinate Transformation Matrix\" %s", "Virtual core XTEST pointer", COOR[current_state]);
+	system(command);
+	sprintf(command, "xinput --map-to-output \"%s\" eDP-1", "Virtual core XTEST pointer");
 	system(command);
 }
 
