@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <time.h>
 #include <string.h>
 
 #define DATA_SIZE 256
@@ -99,7 +99,7 @@ int main(int argc, char const *argv[]) {
 #endif
 		if(rotation_changed())
 			rotate_screen();
-		sleep(2);
+		nanosleep((const struct timespec[]){{0, 500000000L}}, NULL);
 	}
 	
 	return 0;
