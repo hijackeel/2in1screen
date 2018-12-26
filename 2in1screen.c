@@ -13,6 +13,7 @@ char content[DATA_SIZE];
 char command[DATA_SIZE*4];
 
 char *ROT[]   = {"normal", 				"inverted", 			"left", 				"right"};
+char *feh[] = {"", "", "--rotate right", "--rotate left"};
 // char *TOUCH[] = {"enable", 				"disable", 				"disable", 				"disable"};
 
 double accel_y = 0.0,
@@ -59,6 +60,9 @@ void rotate_screen(){
 	system(command);
 	
 	system("i3-msg restart");
+
+	sprintf(command, "~/feh/src/feh --bg-fill %s ~/wallpaper/bomberg_in_the_hold.jpg", feh[current_state]);
+	system(command);
 
 	sprintf(command, "xinput --map-to-output \"%s\" eDP-1", "Wacom HID 511A Finger touch");
 	system(command);
