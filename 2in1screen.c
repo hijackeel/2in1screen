@@ -58,7 +58,7 @@ void rotate_screen(){
 	sprintf(command, "xrandr -o %s", ROT[current_state]);
 	system(command);
 	
-	system("i3 restart");
+	system("i3-msg restart");
 
 	sprintf(command, "xinput --map-to-output \"%s\" eDP-1", "Wacom HID 511A Finger touch");
 	system(command);
